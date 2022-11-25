@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.4;
+    font-family: 'Poppins', sans-serif;
+}
+
+p {
+    color: hsl(229, 6%, 66%);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    height: 100%;
+}
+
+.heading-text {
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+.heading-text h1 {
+    font-size: 2.1rem;
+}
+
+.heading-text h1 span {
+    font-weight: 200;
+    display: block;
+    color: hsl(229, 6%, 50%);
+}
+
+.heading-text p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: repeat(2, 200px);
+    margin: 30px 0;
+    gap: 20px;
+}
+
+.card {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    box-shadow: 2px 2px 20px -5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    z-index: 1;
+}
+
+.card-1::after {
+    background-color: hsl(180, 62%, 55%);
+}
+
+.card-2::after {
+    background-color: hsl(0, 78%, 62%);
+}
+
+.card-3::after {
+    background-color: hsl(34, 97%, 64%);
+}
+
+.card-4::after {
+    background-color: hsl(212, 86%, 64%);
+}
+
+.card-1 {
+    grid-row: span 2;
+    align-self: center
+}
+
+.card-4 {
+    grid-row: span 2;
+    align-self: center;
+}
+
+.img-container {
+    width: 50px;
+    height: 50px;
+    align-self: flex-end;
+
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.card-text h2 {
+    font-size: 17px;
+}
+
+.card-text p {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* labtop and mebile  version */
+@media (max-width: 960px) {
+    .cards {
+        width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+        justify-content: center;
+    }
+
+    .card {
+        grid-row: auto;
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    .heading-text h1 {
+        font-size: 1.5rem;
+    }
+}
